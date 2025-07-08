@@ -54,25 +54,93 @@ foreach ($prefectures as $x => $y) {
 
 
 // Q8 連想配列-2
-// $prefectures = ['東京都' => '新宿区', '神奈川県' => '横浜市', '埼玉県' => 'さいたま市', '栃木県' => '宇都宮市', '千葉県' => '千葉市', '茨城県' => '水戸市', '群馬県' => '前橋市'];
+$prefectures = ['東京都' => '新宿区', '神奈川県' => '横浜市', '埼玉県' => 'さいたま市', '栃木県' => '宇都宮市', '千葉県' => '千葉市', '茨城県' => '水戸市', '群馬県' => '前橋市'];
+$keys = array_keys($prefectures); // キーの取得
 
-// if ($prefectures["埼玉県"] === 'さいたま市') {
-//     echo $prefectures["埼玉県"] . 'の県庁所在地は、' . $prefectures["埼玉県"] . 'です。';
-// }
+// 値がさいたま市である時
+if ($prefectures["埼玉県"] === 'さいたま市') {
+    echo $keys[2] . 'の県庁所在地は、' . $prefectures["埼玉県"] . 'です。';
+}
 
 
 // Q9 連想配列-3
+$prefectures = [
+    '東京都' => '新宿区',
+    '神奈川県' => '横浜市', 
+    '埼玉県' => 'さいたま市', 
+    '栃木県' => '宇都宮市', 
+    '千葉県' => '千葉市', 
+    '茨城県' => '水戸市', 
+    '群馬県' => '前橋市', 
+    '長野県' => '長野市', 
+    '北海道' => '札幌市'
+];
+
+foreach ($prefectures as $key => $value) {
+    if ($key === '東京都' || $key === '神奈川県' || $key === '埼玉県' || $key === '栃木県' || $key === '千葉県' || $key === '茨城県' || $key === '群馬県') {
+        echo $key . 'の県庁所在地は、' . $value . 'です。' . "\n";
+    } else {
+        echo $key . 'は関東地方ではありません。' . "\n";
+    }
+}
 
 
 // Q10 関数-1
+function hello($name) {
+    echo $name . 'さん、こんにちは。' . "\n";
+}
+
+$hello = hello('田中');
+$hello = hello('鈴木');
 
 
 // Q11 関数-2
+function calcTaxInPrice($price) {
+    $taxInPrice = $price * 1.1;
+    return $taxInPrice;
+}
+
+$price = 1000;
+
+echo $price . '円の商品の税込価格は' . calcTaxInPrice($price) . '円です。';
 
 
 // Q12 関数とif文
+function distinguishNum($num) {
+    if ($num % 2 === 0) {
+        echo $num . 'は偶数です。' . "\n";
+    } else {
+        echo $num . 'は奇数です。' . "\n";
+    }
+}
+
+$distinguish = distinguishNum(11);
+$distinguish = distinguishNum(24);
 
 
 // Q13 関数とswitch文
+function evaluateGrade($point) {
+    switch ($point) {
+        case 'A':
+        case 'B':
+            echo '合格です。' . "\n";
+            break;
+        
+        case 'C':
+            echo '合格ですが追加課題があります。' . "\n";
+            break;
+
+        case 'D':
+            echo '不合格です。' . "\n";
+            break;
+
+        default:
+            echo '判定不明です。講師に問い合わせてください。' . "\n";
+            break;
+    }
+}
+
+$result = evaluateGrade('A');
+$result = evaluateGrade('');
 
 
