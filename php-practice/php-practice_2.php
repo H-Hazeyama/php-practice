@@ -2,15 +2,15 @@
 // Q1 tic-tac問題
 echo '1から100までのカウントを開始します。' . "\n";
 
-for ($i = 1; $i < 101; $i++) {
+for ($i = 1; $i <= 100; $i++) {
     if ($i % 4 === 0 && $i % 5 === 0) {
-    echo 'tic-tac' . "\n";
+        echo 'tic-tac' . "\n";
     } elseif ($i % 4 === 0) {
-    echo 'tic' . "\n";
+        echo 'tic' . "\n";
     } elseif ($i % 5 === 0) {
-    echo 'tac' . "\n";
+        echo 'tac' . "\n";
     } else {
-    echo $i . "\n";
+        echo $i . "\n";
     }
 }
 

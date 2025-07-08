@@ -24,11 +24,7 @@ $device = 'windows';
 if ($device === 'windows') {
     echo '使用OSは、windowsです。';
 } else {
-    if ($device === 'mac') {
-        echo '使用OSは、macです。';
-    } else {
-        echo 'どちらでもありません。';
-    }
+    echo $message = ($device === 'mac') ? '使用OSは、macです。' : 'どちらでもありません。';
 }
 
 
@@ -79,11 +75,11 @@ $prefectures = [
     '茨城県' => '水戸市', 
     '群馬県' => '前橋市'
 ];
-$keys = array_keys($prefectures); // キーの取得
 
-// 値がさいたま市である時
-if ($prefectures["埼玉県"] === 'さいたま市') {
-    echo $keys[2] . 'の県庁所在地は、' . $prefectures["埼玉県"] . 'です。';
+foreach ($prefectures as $key => $value) {
+    if ($key === '埼玉県') {
+        echo $key . 'の県庁所在地は、' . $value . 'です。';
+    }
 }
 
 
@@ -149,24 +145,22 @@ function evaluateGrade($point) {
     switch ($point) {
         case 'A':
         case 'B':
-            echo '合格です。' . "\n";
-            break;
+            $result = '合格です。' . "\n";
+            return $result;
         
         case 'C':
-            echo '合格ですが追加課題があります。' . "\n";
-            break;
+            $result = '合格ですが追加課題があります。' . "\n";
+            return $result;
 
         case 'D':
-            echo '不合格です。' . "\n";
-            break;
+            $result = '不合格です。' . "\n";
+            return $result;
 
         default:
-            echo '判定不明です。講師に問い合わせてください。' . "\n";
-            break;
+            $result = '判定不明です。講師に問い合わせてください。' . "\n";
+            return $result;
     }
 }
 
-$result = evaluateGrade('A');
-$result = evaluateGrade('');
-
-
+echo evaluateGrade('A');
+echo evaluateGrade('');
