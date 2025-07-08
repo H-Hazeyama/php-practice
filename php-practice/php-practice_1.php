@@ -101,7 +101,9 @@ $prefectures = [
 ];
 
 foreach ($prefectures as $key => $value) {
-    if ($key === '東京都' || $key === '神奈川県' || $key === '埼玉県' || $key === '栃木県' || $key === '千葉県' || $key === '茨城県' || $key === '群馬県') {
+    if ($key === '東京都' || $key === '神奈川県' || $key === '埼玉県' 
+        || $key === '栃木県' || $key === '千葉県' || $key === '茨城県' || $key === '群馬県') 
+    {
         echo $key . 'の県庁所在地は、' . $value . 'です。' . "\n";
     } else {
         echo $key . 'は関東地方ではありません。' . "\n";
