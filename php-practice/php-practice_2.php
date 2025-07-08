@@ -37,11 +37,19 @@ $personalInfos = [
 // Q2 - 問題1
 echo $personalInfos[1]['name'] . 'の電話番号は' . $personalInfos[1]['tel'] . 'です。';
 
-// Q3 オブジェクト-1
+// Q2 - 問題2
 foreach ($personalInfos as $key => $value) {
-    
+    echo $key + 1 . '番目の' . $personalInfos[$key]['name'] . 'のメールアドレスは' . $personalInfos[$key]['mail'] . 'で、電話番号は' . $personalInfos[$key]['tel'] . 'です。' . "\n";
 }
 
+// Q2 - 問題3
+$ageList = [25, 30, 18];
+
+foreach ($personalInfos as $key => $value) {
+    $personalInfos[$key]['age'] = $ageList[$key];
+}
+
+// Q3 オブジェクト-1
 
 // Q4 オブジェクト-2
 
