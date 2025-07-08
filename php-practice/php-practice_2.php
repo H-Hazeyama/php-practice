@@ -96,9 +96,19 @@ $yamada->attend('PHP');
 
 
 // Q5 定義済みクラス
+// Q5 - 問題1 1ヶ月前の日付 YYYY-MM-DD
+$date = new DateTime();
+$interval = new DateInterval('P1M'); // 1ヶ月
+$date->sub($interval); // 減算
+echo $date->format('Y-m-d');
 
 
+// Q5 - 問題2 今日の日付と1992年4月25日との日付の差
+$origin = new DateTimeImmutable('2025-07-08');
+$target = new DateTimeImmutable('1992-04-25');
+$interval = $origin->diff($target);
 
+echo 'あの日から' . $interval->format("%a") . '日経過しました。';
 
 
 ?>
