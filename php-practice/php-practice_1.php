@@ -127,13 +127,13 @@ $hello = hello('鈴木');
 
 // Q11 関数-2
 function calcTaxInPrice($price) {
-    $taxInPrice = $price * 1.1;
-    return $taxInPrice;
+    return $price * 1.1;
 }
 
 $price = 1000;
+$taxInPrice = calcTaxInPrice($price);
 
-echo $price . '円の商品の税込価格は' . calcTaxInPrice($price) . '円です。';
+echo $price . '円の商品の税込価格は' . $taxInPrice . '円です。';
 
 
 // Q12 関数とif文
